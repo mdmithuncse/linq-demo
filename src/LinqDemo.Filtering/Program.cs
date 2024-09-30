@@ -1,5 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using LinqDemo.DataSource;
+using LinqDemo.DataSource.Relationships.OneToOne;
 using LinqDemo.Helper;
 
 Console.WriteLine("Hello, This is an example of linq filtering app.");
@@ -22,4 +23,17 @@ var allProducts = ProductsBuilder.GetProducts();
 Console.WriteLine("Here's the filtered result for product items: ");
 var filteredProducts = allProducts.Where(x => x.Price > 400);
 Display.PrintProducts(filteredProducts.ToList());
+Console.WriteLine("\n");
+
+var profiles = UserProfilesBuilder.GetUserProfiles();
+
+Console.WriteLine("Here's the filtered result for profiles: ");
+var filteredProfiles = profiles.Where(x => true);
+Display.PrintProfiles(filteredProfiles.ToList());
+Console.WriteLine("\n");
+
+var users = UsersBuilder.GetUsers();
+Console.WriteLine("Here's the filtered result for users: ");
+var filteredUsers = users.Where(x => true);
+Display.PrintUsers(filteredUsers.ToList());
 Console.WriteLine("\n");
